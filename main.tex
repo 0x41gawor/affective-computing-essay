@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bachelor's & Master's Thesis Template             %%
+%% Copyleft by Artur M. Brodzki & Piotr Woźniak      %%
+%% Faculty of Electronics and Information Technology %%
+%% Warsaw University of Technology, 2019-2020        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[
+    left=2.5cm,         % Sadly, generic margin parameter
+    right=2.5cm,        % doesnt't work, as it is
+    top=2.5cm,          % superseded by more specific
+    bottom=3cm,         % left...bottom parameters.
+    bindingoffset=6mm,  % Optional binding offset.
+    nohyphenation=false % You may turn off hyphenation, if don't like.
+]{eiti/eiti-thesis}
+
+\langeng % Dla języka angielskiego mamy \langeng
+\graphicspath{{img/}}             % Katalog z obrazkami.
+
+\usepackage[
+    backend=biber
+]{biblatex}
+\addbibresource{bibliografia.bib}
+
+\begin{document}
+%--------------------------------------
+% Strona tytułowa
+%--------------------------------------
+\EngineerThesis % Dla pracy inżynierskiej mamy \EngineerThesis
+\title{
+    Affective Computing: Unveiling the Potential of Emotion in the Digital Age
+}
+\engtitle{ % Tytuł po angielsku do angielskiego streszczenia
+     Affective Computing: Unveiling the Potential of Emotion in the Digital Age
+}
+\author{Andrzej Gawor}
+\date{\the\year}
+
+
+%--------------------------------------
+% Streszczenie po polsku
+%--------------------------------------
+\cleardoublepage % Zaczynamy od nieparzystej strony
+\abstract
+\input{tex/abstract/eng.tex}
+
+%--------------------------------------
+% Spis treści
+%--------------------------------------
+\newpage
+\tableofcontents
+
+%--------------------------------------
+% Rozdziały
+%--------------------------------------
+\pagestyle{headings}
+
+\newpage
+%\input{path}
+\input{tex/1-introduction/main}
+\input{tex/2-understanding-emotions/main}
+
+
+%--------------------------------------------
+% Literatura
+%--------------------------------------------
+\cleardoublepage % Zaczynamy od nieparzystej strony
+\printbibliography
+
+%--------------------------------------------
+% Spisy 
+%--------------------------------------------
+% \newpage
+\pagestyle{plain}
+
+% \listoffigurestoc     % Spis rysunków.
+% \vspace{1cm}          % vertical space
+% \listoftablestoc      % Spis tabel.
+% \vspace{1cm}          % vertical space
+% \listofappendicestoc  % Spis załączników
+
+
+\end{document} % Dobranoc.
